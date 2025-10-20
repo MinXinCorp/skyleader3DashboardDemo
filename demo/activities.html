@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動列表</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="activities-box">
+            <div class="header">
+                <div>
+                    <h2>活動列表</h2>
+                    <p class="anklet-info">腳環編號: <span id="ankletIdDisplay"></span></p>
+                </div>
+                <button class="btn btn-secondary" onclick="window.location.href='anklet-input.html'">重新輸入</button>
+            </div>
+
+            <div class="activity-list" id="activityList">
+                <!-- 活動列表將由 JavaScript 動態生成 -->
+            </div>
+
+            <p class="demo-hint">Demo 提示：顯示 1 年內的活動，由近至遠排序</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>軌跡查詢</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container full-height">
+        <div class="tracks-container">
+            <div class="header">
+                <div>
+                    <h2 id="activityTitle">活動名稱</h2>
+                </div>
+                <button class="btn btn-secondary" onclick="window.location.href='activities.html'">返回活動列表</button>
+            </div>
+
+            <div class="tracks-content">
+                <!-- 左側軌跡列表 -->
+                <div class="tracks-sidebar">
+                    <h3>軌跡列表 <span class="track-count">(已選 <span id="selectedCount">0</span>/10)</span></h3>
+                    <div class="track-list" id="trackList">
+                        <!-- 軌跡列表將由 JavaScript 動態生成 -->
+                    </div>
+                </div>
+
+                <!-- 右側地圖 -->
+                <div class="map-container">
+                    <div id="map"></div>
+                    <div class="map-controls">
+                        <button class="btn btn-success" id="shareBtn">
+                            <span>📤</span> 分享軌跡
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="demo-hint">Demo 提示：最多可選擇 10 條軌跡進行繪製</p>
+        </div>
+    </div>
+
+    <!-- 分享連結彈窗 -->
+    <div id="shareModal" class="modal">
+        <div class="modal-content">
+            <h3>分享連結已生成</h3>
+            <div class="share-link-box">
+                <input type="text" id="shareLink" readonly>
+                <button class="btn btn-primary" onclick="copyShareLink()">複製連結</button>
+            </div>
+            <button class="btn btn-secondary" onclick="closeShareModal()">關閉</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

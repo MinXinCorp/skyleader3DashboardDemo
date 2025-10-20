@@ -1,0 +1,441 @@
+/* 全域樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container.full-height {
+    align-items: stretch;
+}
+
+/* 登入頁面 */
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #667eea;
+    font-size: 24px;
+}
+
+/* 輸入腳環編號頁面 */
+.input-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+.input-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #667eea;
+}
+
+/* 活動列表頁面 */
+.activities-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.header h2 {
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.anklet-info {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.anklet-info span {
+    font-weight: bold;
+    color: #333;
+}
+
+.activity-list {
+    margin-top: 20px;
+}
+
+.activity-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.activity-item:hover {
+    border-color: #667eea;
+    background-color: #f5f7ff;
+    transform: translateX(5px);
+}
+
+.activity-item .radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #667eea;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.activity-item.selected .radio {
+    background-color: #667eea;
+    box-shadow: inset 0 0 0 4px white;
+}
+
+.activity-info h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.activity-info .date {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 軌跡頁面 */
+.tracks-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 40px);
+}
+
+.tracks-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.tracks-sidebar {
+    width: 350px;
+    padding: 20px;
+    border-right: 2px solid #e0e0e0;
+    overflow-y: auto;
+}
+
+.tracks-sidebar h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.track-count {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+}
+
+.track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.track-item {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.track-item:hover {
+    border-color: #667eea;
+    background-color: #f5f7ff;
+}
+
+.track-item.selected {
+    border-color: #667eea;
+    background-color: #f5f7ff;
+}
+
+.track-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.track-header input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.track-name {
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+}
+
+.track-actions {
+    margin-top: 10px;
+}
+
+.btn-download {
+    width: 100%;
+    padding: 8px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #218838;
+}
+
+.map-container {
+    flex: 1;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#map {
+    flex: 1;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-controls {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 表單樣式 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* 按鈕樣式 */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+button[type="submit"] {
+    width: 100%;
+}
+
+/* Demo 提示 */
+.demo-hint {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    color: #856404;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* 分享彈窗 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-content h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.share-link-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.share-link-box input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.share-link-box .btn {
+    padding: 10px 20px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .tracks-content {
+        flex-direction: column;
+    }
+
+    .tracks-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #e0e0e0;
+        max-height: 40vh;
+    }
+
+    .map-container {
+        height: 50vh;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header .btn {
+        width: 100%;
+    }
+}
+
+/* 載入動畫 */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
